@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+</head>
+<body>
+    <figure>
+        <img src="img/logo-rijksoverheid.svg" alt="">
+    </figure>
+    <h1>Voortgang invullen formulier erfbelasting</h1>
+    <form action="" id="form-page1">
+        <section>
+            <h2>Gegevens van de overledene</h2>
+            <ol>
+                <li>
+                    <fieldset>
+                        <legend>Vul hier de gegevens in van de overledene.</legend>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstNameDied">Voorletter(s)</label>
+                                <input type="text" required name="firstNameDied" id="firstNameDied" pattern="^[A-Z.]*$" title="Vul alleen hoofdletters en punten in. Voorbeeld: (A.B.)">
+                            </div>
+                            <div class="form-group">
+                                <label for="prepositionDied">Tussen-voegsel(s)</label>
+                                <input type="text" name="prepositionDied" id="prepositionDied" pattern="^[a-z]+$" title="Vul alleen kleine letters in">
+                            </div>
+                            <div class="form-group">
+                                <label for="secondNameDied">Achternaam</label>
+                                <input type="text" required name="secondNameDied" id="secondNameDied" pattern="^[a-zA-Z]+$" title="Vul alleen letters in">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bsnDied">Burgerservicenummer overledene</label>
+                            <input type="text" required name="bsnDied" id="bsnDied" minlength="9" maxlength="9" pattern="\b\d{9}\b" title="Vul een juist BSN nummer in">
+                        </div>
+                        <div class="form-group">
+                            <label for="dateOfDied">Overlijdensdatum</label>
+                            <input type="date" required name="dateOfDied" id="dateOfDied">
+                        </div>
+                    </fieldset>
+                </li>
+
+                <li>
+                    <fieldset>
+                        <legend>Was de overledene getrouwd of had de overledene een
+                            geregistreerd partner op het moment van overlijden?</legend>
+                        <ul>
+                            <li>
+                                <label for="question-1b-a">Nee.</label>
+                                <a href="#" id="link-1b-a">Ga verder met vraag 1c.</a>
+                                <input type="radio" name="question-1b" id="question-1b-a">
+                            </li>
+                            <li>
+                                <label for="question-1b-b">Ja.</label>
+                                <input type="radio" name="question-1b" id="question-1b-b">
+                            </li>
+                        </ul>
+                    </fieldset>
+                </li>
+
+                <li>
+                    <fieldset>
+                        <legend>Hadden de overledene en diens echtgenoot of
+                            geregistreerd partner huwelijkse of partner schaps-
+                            voorwaarden laten vastleggen in een notariële akte?</legend>
+                        <ul>
+                            <li>
+                                <label for="question-1c-a">Nee.</label>
+                                <input type="radio" name="question-1c" id="question-1c-a">
+                            </li>
+                            <li>
+                                <label>Ja.</label>
+                                <label id="link-1c-b" for="avatar">Stuur een kopie van de akte mee met de aangifte.
+                                    <input type="file" id="test" name="avatar" accept="image/png, image/jpeg" />
+                                </label>
+                                <input type="radio" name="question-1c" id="question-1c-b">
+                            </li>
+                        </ul>
+                    </fieldset>
+                </li>
+            </ol>
+            <section>
+                <button id="submitForm1">Akkoord</button>
+            </section>
+        </section>
+    </form>
+</body>
+</html>
