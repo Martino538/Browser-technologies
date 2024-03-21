@@ -19,7 +19,7 @@
             <h1>Erfbelasting 2024</h1>
         </section>
         <div class="content-wrapper">
-            <form action="/server.php" id="tax-form" method="POST">
+            <form action="https://adactio.com/post" id="tax-form" method="POST">
                 <div class="section-intro">
                     <h2>Voortgang invullen formulier erfbelasting</h2>
                     <ul id="progress-bar">
@@ -83,7 +83,7 @@
                         geregistreerd partner op het moment van overlijden?</p>
                     <div class="input-wrapper">
                         <div class="radioBtn-wrapper">
-                            <input type="radio" name="question-1a" id="question-1a-a" value="nee" data-show-hide="#question-1a" checked>
+                            <input type="radio" name="question-1a" id="question-1a-a" value="nee" data-show-hide="#question-1a" required>
                             <label for="question-1a-a">Nee</label>
                         </div>
                         <div class="radioBtn-wrapper">
@@ -91,7 +91,7 @@
                             <label for="question-1a-b">Ja.</label>
                         </div>
                     </div>
-                    <div class="hidden" id="question-1a">
+                    <div class="hidden no-js page1-question1-hidden" id="question-1a">
                         <p>Hadden de overledene en diens echtgenoot of
                             geregistreerd partner huwelijkse of partner schaps-
                             voorwaarden laten vastleggen in een notariële akte?</p>
@@ -119,14 +119,16 @@
                                 <label>Ja.</label>
                             </div>
                         </div>
-                        <p>Datum huwelijkse of partnerschapsvoorwaarden</p>
-                        <input type="date" name="question-1d" id="question-1d-a">
-                        <label for="question-1c-a"></label>
+                        <div class="form-group">
+                            <p>Datum huwelijkse of partnerschapsvoorwaarden</p>
+                            <input type="date" name="question-1d" id="question-1d-a">
+                            <label for="question-1c-a"></label>
+                        </div>
                     </div>
                     <p>Had de overledene kinderen?</p>
                     <div class="input-wrapper">
                         <div class="radioBtn-wrapper">
-                            <input type="radio" name="question-2a" id="question-2a-a" value="nee" data-show-hide="#question-1b" checked>
+                            <input type="radio" name="question-2a" id="question-2a-a" value="nee" data-show-hide="#question-1b" required>
                             <label for="question-2a-a">Nee.</label>
                         </div>
                         <div class="radioBtn-wrapper">
@@ -134,7 +136,7 @@
                             <label for="question-2a-b">Ja.</label>
                         </div>
                     </div>
-                    <div class="hidden" id="question-1b">
+                    <div class="hidden no-js page1-question2-hidden" id="question-1b">
                         <p>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</p>
                         <div class="input-wrapper">
                             <div class="radioBtn-wrapper">
@@ -161,7 +163,7 @@
                     <p>Had de overledene een testament?</p>
                     <div class="input-wrapper">
                         <div class="radioBtn-wrapper">
-                            <input type="radio" name="question-3a" id="question-3a-a" value="nee" data-show-hide="#question-1c" checked>
+                            <input type="radio" name="question-3a" id="question-3a-a" value="nee" data-show-hide="#question-1c" required>
                             <label for="question-3a-a">Nee.</label>
                         </div>
                         <div class="radioBtn-wrapper">
@@ -170,7 +172,7 @@
                         </div>
                     </div>
 
-                    <div class="hidden" id="question-1c">
+                    <div class="hidden no-js page1-question3-hidden" id="question-1c">
                         <p>Gegevens notaris</p>
                         <div class="form-group">
                             <label for="protocolNotaris">Protocolnummer notaris</label>
@@ -209,8 +211,9 @@
                     </section>
                 </fieldset>
                 <fieldset id="section3">
-                    <legend>Vul 1 van de 3 in: het burgerservicenummer of RSIN van de gemachtigde, het beconnummer van de adviseur of 
-                        het protocolnummer van de notaris.</legend>
+                    <h2>Gegevens gemachtigde</h2>
+                    <h3>Vul 1 van de 3 in: het burgerservicenummer of RSIN van de gemachtigde, het beconnummer van de adviseur of 
+                        het protocolnummer van de notaris.</h3>
                         <div class="form-group">
                             <label for="authBSN">Burgerservicenummer/RSIN gemachtigde</label>
                             <input type="text" placeholder="" required name="authBSN" id="authBSN" minlength="9" maxlength="9" pattern="^[1-9][0-9]{8}$" title="Vul een juist BSN nummer in, startende met 1 of hoger">
@@ -330,12 +333,14 @@
                         </section>
                 </fieldset>
                 <fieldset id="section4">
+                    <h2>Voor wie doet u aangifte?</h2>
                     <p>Heeft de overledene in het testament een executeur aangewezen om de erfenis af te handelen?
                         Dan moet de executeur aangifte doen voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers).</p>
                     <div class="input-wrapper">
-                        <div class="radioBtn-wrapper">
-                            <input type="radio" name="question-4a" id="question-4a-a" value="nee" data-show-hide="#question-4a" checked>
-                            <label for="question-4a-a">Nee</label>
+                        <div class="radioBtn-wrapper largeCheckbox">
+                            <input type="radio" name="question-4a" id="question-4a-a" value="nee" data-show-hide="#question-4a" required>
+                            <label for="question-4a-a">Ik ben executeur en doe aangifte voor alle personen en/of instellingen die
+                                iets krijgen uit de nalatenschap (verkrijgers).</label>
                         </div>
                         <div class="radioInputField">
                             <label for="question-4a-a-input">Aantal verkrijgers</label>
@@ -347,7 +352,7 @@
                         <input type="radio" name="question-4a" id="question-4a-b" value="ja-exec" data-show-hide="#question-4a">
                         <label for="question-4a-b">Geen executeur</label>
                     </div>
-                    <div class="hidden" id="question-4a">
+                    <div class="hidden no-js page1-question4-hidden" id="question-4a">
                         <p>Is er geen executeur aangewezen? Kruis dan aan welke situatie voor u geldt.</p>
                         <div class="input-wrapper">
                             <div class="radioBtn-wrapper largeCheckbox">
@@ -404,12 +409,12 @@
                     </section>
                 </fieldset>
                 <fieldset id="section5">
-                    <p>Heeft de overledene in het testament een executeur aangewezen om de erfenis af te handelen?
-                        Dan moet de executeur aangifte doen voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers).</p>
+                    <h2>Voor wie doet u aangifte? (vervolg)</h2>
+                    <h3>Voor wie doet u géén aangifte?</h3>
                     <p>Zijn er verkrijgers voor wie u geen aangifte doet?</p>
                     <div class="input-wrapper">
                         <div class="radioBtn-wrapper">
-                            <input type="radio" name="question-5a" id="question-5a-a" value="nee" data-show-hide="#question-5a" checked>
+                            <input type="radio" name="question-5a" id="question-5a-a" value="nee" data-show-hide="#question-5a" required>
                             <label for="question-5a-a">Nee</label>
                         </div>
                         <div class="radioBtn-wrapper">
@@ -417,70 +422,182 @@
                             <label for="question-5a-b">Ja</label>
                         </div>
                     </div>
-                    <div class="hidden" id="question-5a">
-                        <fieldset>
-                            <p>Verkrijger 1</p>
+                    <div class="hidden no-js page1-question5-hidden" id="question-5a">
+                        <p>Verkrijger 1</p>
+                        <div class="input-wrapper">
+                            <div class="radioBtn-wrapper">
+                                <input type="radio" name="question-5b" id="question-5b-a" value="nee" data-show-hide="#question-5a-sub">
+                                <label for="question-5b-a">Nee</label>
+                            </div>
+                            <div class="radioBtn-wrapper">
+                                <input type="radio" name="question-5b" id="question-5b-b" value="ja" data-show-hide="#question-5a-sub">
+                                <label for="question-5b-b">Ja</label>
+                            </div>
+                        </div>
+                        <div class="hidden no-js page1-question6-hidden" id="question-5a-sub">
+                            <div class="form-group">
+                                <label for="bsnDiedSecond">Burgerservicenummer overledene</label>
+                                <input type="text" placeholder="" name="bsnDiedSecond" id="bsnDiedSecond" minlength="9" maxlength="9" pattern="^[1-9][0-9]{8}$" title="Vul een juist BSN nummer in">
+                                <span data-error>&#9888; Alleen getallen, te beginnen met 1 of hoger</span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstNameDiedSecond">Voorletter(s)</label>
+                                    <input type="text" placeholder="" name="firstNameDiedSecond" id="firstNameDiedSecond" pattern="^[A-Z][A-Za-z.]*$" title="Vul alleen hoofdletters en punten in. Voorbeeld: (A.B.)">
+                                    <span data-error>&#9888; Alleen hoofdletters en punten</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="prepositionDiedSecond">Tussen-voegsel(s)</label>
+                                    <input type="text" placeholder="" name="prepositionDiedSecond" id="prepositionDiedSecond" pattern="^[a-zA-Z]+$" title="Vul alleen kleine letters in">
+                                    <span data-error>&#9888; Alleen letters toegestaan</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="secondNameDiedSecond">Achternaam</label>
+                                    <input type="text" placeholder="" name="secondNameDiedSecond" id="secondNameDiedSecond" pattern="^[a-zA-Z]+$" title="Vul alleen letters in">
+                                    <span data-error>&#9888; Alleen letters toegestaan</span>
+                                </div>
+                            </div>
+                            <p>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</p>
                             <div class="input-wrapper">
                                 <div class="radioBtn-wrapper">
-                                    <input type="radio" name="question-5b" id="question-5b-a" value="nee" data-show-hide="#question-5a-sub">
-                                    <label for="question-5b-a">Nee</label>
+                                    <input type="radio" name="question-5c" id="question-5c-a">
+                                    <label for="question-5c-a">Nee</label>
                                 </div>
                                 <div class="radioBtn-wrapper">
-                                    <input type="radio" name="question-5b" id="question-5b-b" value="ja" data-show-hide="#question-5a-sub">
-                                    <label for="question-5b-b">Ja</label>
+                                    <input type="radio" name="question-5c" id="question-5c-b">
+                                    <label for="question-5c-b">Ja</label>
                                 </div>
                             </div>
-                            <div class="hidden" id="question-5a-sub">
+                            <p>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</p>
+                            <div class="input-wrapper">
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-5d" id="question-5c-c">
+                                    <label for="question-5c-c">Nee</label>
+                                </div>
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-5d" id="question-5c-d">
+                                    <label for="question-5c-d">Ja</label>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Verkrijger 2</p>
+                        <div class="input-wrapper">
+                            <div class="radioBtn-wrapper">
+                                <input type="radio" name="question-5b" id="question-5b-a" value="nee" data-show-hide="#question-5a-sub">
+                                <label for="question-5b-a">Nee</label>
+                            </div>
+                            <div class="radioBtn-wrapper">
+                                <input type="radio" name="question-5b" id="question-5b-b" value="ja" data-show-hide="#question-5a-sub">
+                                <label for="question-5b-b">Ja</label>
+                            </div>
+                        </div>
+                        <div class="hidden no-js page1-question7-hidden" id="question-5a-sub">
+                            <div class="form-group">
+                                <label for="bsnDiedSecond">Burgerservicenummer overledene</label>
+                                <input type="text" placeholder="" name="bsnDiedSecond" id="bsnDiedSecond" minlength="9" maxlength="9" pattern="^[1-9][0-9]{8}$" title="Vul een juist BSN nummer in">
+                                <span data-error>&#9888; Alleen getallen, te beginnen met 1 of hoger</span>
+                            </div>
+                            <div class="form-row">
                                 <div class="form-group">
-                                    <label for="bsnDiedSecond">Burgerservicenummer overledene</label>
-                                    <input type="text" placeholder="" name="bsnDiedSecond" id="bsnDiedSecond" minlength="9" maxlength="9" pattern="^[1-9][0-9]{8}$" title="Vul een juist BSN nummer in">
-                                    <span data-error>&#9888; Alleen getallen toegestaan</span>
+                                    <label for="firstNameDiedSecond">Voorletter(s)</label>
+                                    <input type="text" placeholder="" name="firstNameDiedSecond" id="firstNameDiedSecond" pattern="^[A-Z][A-Za-z.]*$" title="Vul alleen hoofdletters en punten in. Voorbeeld: (A.B.)">
+                                    <span data-error>&#9888; Alleen hoofdletters en punten</span>
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="firstNameDiedSecond">Voorletter(s)</label>
-                                        <input type="text" placeholder="" name="firstNameDiedSecond" id="firstNameDiedSecond" pattern="^[A-Z][A-Za-z.]*$" title="Vul alleen hoofdletters en punten in. Voorbeeld: (A.B.)">
-                                        <span data-error>&#9888; Alleen hoofdletters en punten</span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="prepositionDiedSecond">Tussen-voegsel(s)</label>
-                                        <input type="text" placeholder="" name="prepositionDiedSecond" id="prepositionDiedSecond" pattern="^[a-zA-Z]+$" title="Vul alleen kleine letters in">
-                                        <span data-error>&#9888; Alleen letters toegestaan</span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="secondNameDiedSecond">Achternaam</label>
-                                        <input type="text" placeholder="" name="secondNameDiedSecond" id="secondNameDiedSecond" pattern="^[a-zA-Z]+$" title="Vul alleen letters in">
-                                        <span data-error>&#9888; Alleen letters toegestaan</span>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="prepositionDiedSecond">Tussen-voegsel(s)</label>
+                                    <input type="text" placeholder="" name="prepositionDiedSecond" id="prepositionDiedSecond" pattern="^[a-zA-Z]+$" title="Vul alleen kleine letters in">
+                                    <span data-error>&#9888; Alleen letters toegestaan</span>
                                 </div>
-                                <p>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</p>
-                                <div class="input-wrapper">
-                                    <div class="radioBtn-wrapper">
-                                        <input type="radio" name="question-5c" id="question-5c-a">
-                                        <label for="question-5c-a">Nee</label>
-                                    </div>
-                                    <div class="radioBtn-wrapper">
-                                        <input type="radio" name="question-5c" id="question-5c-b">
-                                        <label for="question-5c-b">Ja</label>
-                                    </div>
-                                </div>
-                                <p>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</p>
-                                <div class="input-wrapper">
-                                    <div class="radioBtn-wrapper">
-                                        <input type="radio" name="question-5d" id="question-5c-c">
-                                        <label for="question-5c-c">Nee</label>
-                                    </div>
-                                    <div class="radioBtn-wrapper">
-                                        <input type="radio" name="question-5d" id="question-5c-d">
-                                        <label for="question-5c-d">Ja</label>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="secondNameDiedSecond">Achternaam</label>
+                                    <input type="text" placeholder="" name="secondNameDiedSecond" id="secondNameDiedSecond" pattern="^[a-zA-Z]+$" title="Vul alleen letters in">
+                                    <span data-error>&#9888; Alleen letters toegestaan</span>
                                 </div>
                             </div>
-                        </fieldset>
+                            <p>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</p>
+                            <div class="input-wrapper">
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-5c" id="question-5c-a">
+                                    <label for="question-5c-a">Nee</label>
+                                </div>
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-5c" id="question-5c-b">
+                                    <label for="question-5c-b">Ja</label>
+                                </div>
+                            </div>
+                            <p>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</p>
+                            <div class="input-wrapper">
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-5d" id="question-5c-c">
+                                    <label for="question-5c-c">Nee</label>
+                                </div>
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-5d" id="question-5c-d">
+                                    <label for="question-5c-d">Ja</label>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Verkrijger 3</p>
+                        <div class="input-wrapper">
+                            <div class="radioBtn-wrapper">
+                                <input type="radio" name="question-5b" id="question-5b-a" value="nee" data-show-hide="#question-5a-sub">
+                                <label for="question-5b-a">Nee</label>
+                            </div>
+                            <div class="radioBtn-wrapper">
+                                <input type="radio" name="question-5b" id="question-5b-b" value="ja" data-show-hide="#question-5a-sub">
+                                <label for="question-5b-b">Ja</label>
+                            </div>
+                        </div>
+                        <div class="hidden no-js page1-question8-hidden" id="question-5a-sub">
+                            <div class="form-group">
+                                <label for="bsnDiedSecond">Burgerservicenummer overledene</label>
+                                <input type="text" placeholder="" name="bsnDiedSecond" id="bsnDiedSecond" minlength="9" maxlength="9" pattern="^[1-9][0-9]{8}$" title="Vul een juist BSN nummer in">
+                                <span data-error>&#9888; Alleen getallen, te beginnen met 1 of hoger</span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstNameDiedSecond">Voorletter(s)</label>
+                                    <input type="text" placeholder="" name="firstNameDiedSecond" id="firstNameDiedSecond" pattern="^[A-Z][A-Za-z.]*$" title="Vul alleen hoofdletters en punten in. Voorbeeld: (A.B.)">
+                                    <span data-error>&#9888; Alleen hoofdletters en punten</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="prepositionDiedSecond">Tussen-voegsel(s)</label>
+                                    <input type="text" placeholder="" name="prepositionDiedSecond" id="prepositionDiedSecond" pattern="^[a-zA-Z]+$" title="Vul alleen kleine letters in">
+                                    <span data-error>&#9888; Alleen letters toegestaan</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="secondNameDiedSecond">Achternaam</label>
+                                    <input type="text" placeholder="" name="secondNameDiedSecond" id="secondNameDiedSecond" pattern="^[a-zA-Z]+$" title="Vul alleen letters in">
+                                    <span data-error>&#9888; Alleen letters toegestaan</span>
+                                </div>
+                            </div>
+                            <p>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</p>
+                            <div class="input-wrapper">
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-5c" id="question-5c-a">
+                                    <label for="question-5c-a">Nee</label>
+                                </div>
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-5c" id="question-5c-b">
+                                    <label for="question-5c-b">Ja</label>
+                                </div>
+                            </div>
+                            <p>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</p>
+                            <div class="input-wrapper">
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-5d" id="question-5c-c">
+                                    <label for="question-5c-c">Nee</label>
+                                </div>
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-5d" id="question-5c-d">
+                                    <label for="question-5c-d">Ja</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <p>Naar wie wilt u dat wij de aanslag erfbelasting sturen?</p>
+                    <h3>Naar wie wilt u dat wij de aanslag erfbelasting sturen?</h3>
                     <div class="radioBtn-wrapper largeCheckbox">
-                        <input type="radio" name="question-3c" id="question-3c-a" checked>
+                        <input type="radio" name="question-3c" id="question-3c-a" required>
                         <label for="question-3c-a">Stuur naar iedere verkrijger van (een deel van) de erfenis een eigen belastingaanslag</label>
                     </div>
                     <div class="radioBtn-wrapper largeCheckbox">
@@ -489,7 +606,7 @@
                             die iets krijgen uit de nalatenschap (verkrijgers) aangifte heeft gedaan; dit mag ook de gemachtigde zijn.
                             Wij sturen de aanslag(en) naar het adres dat u bij vraag 2 hebt ingevuld.</label>
                     </div>
-                    <p>Ondertekening door executeur of gemachtigde</p>
+                    <h3>Ondertekening door executeur of gemachtigde</h3>
                     <ul id="section4-intro-list">
                         <li>- Bent u executeur? Dan moet u aangifte doen voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers).
                             U ondertekent als enige dit aangifteformulier.</li>
@@ -502,7 +619,7 @@
                     <p>Bent u executeur of gemachtigde?</p>
                     <div class="input-wrapper">
                         <div class="radioBtn-wrapper">
-                            <input type="radio" name="question-8a" id="question-8a-a" value="nee" data-show-hide="#question-8a" checked>
+                            <input type="radio" name="question-8a" id="question-8a-a" value="nee" data-show-hide="#question-8a" required>
                             <label for="question-8a-a">Nee</label>
                         </div>
                         <div class="radioBtn-wrapper">
@@ -510,11 +627,11 @@
                             <label for="question-8a-b">Ja</label>
                         </div>
                     </div>
-                    <div class="hidden" id="question-8a">
+                    <div class="hidden no-js page1-question9-hidden" id="question-8a">
                         <div class="form-group">
                             <label for="bsnExec">Burgerservicenummer/RSIN</label>
                             <input type="text" placeholder="" name="bsnExec" id="bsnExec" minlength="9" maxlength="9" pattern="^[1-9][0-9]{8}$" title="Vul een juist BSN nummer in">
-                            <span data-error>&#9888; Alleen getallen toegestaan</span>
+                            <span data-error>&#9888; Alleen getallen, te beginnen met 1 of hoger</span>
                         </div>
                         <div class="form-group">
                             <label for="protocolExec">Protocolnummer (als de executeur ook notaris is)</label>
@@ -590,10 +707,365 @@
                     </section>
                 </fieldset>
                 <fieldset id="section6">
-                    <legend>Heeft de overledene in het testament een executeur aangewezen om de erfenis af te handelen?
-                        Dan moet de executeur aangifte doen voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers).</legend>
+                    <h2>Gegevens verkrijgers</h2>
+                    <div class="acquirer-wrapper">
+                        <h3>Gegevens persoon 1</h3>
+                        <p>Vul de gegevens in van de persoon of instelling.</p>
+                        <div class="form-group">
+                            <label for="bsnAcquirer">Burgerservicenummer persoon</label>
+                            <input type="text" placeholder="" required name="bsnAcquirer" id="bsnAcquirer" minlength="9" maxlength="9" pattern="^[1-9][0-9]{8}$" title="Vul een juist BSN nummer in, startende met 1 of hoger">
+                            <span data-error>&#9888; Alleen getallen, te beginnen met 1 of hoger</span>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstNameAcquirer">Voorletter(s)</label>
+                                <input type="text" placeholder="" required name="firstNameAcquirer" id="firstNameAcquirer" pattern="^[A-Z][A-Za-z.]*$" title="Vul alleen hoofdletters en punten in. Voorbeeld: (A.B.)">
+                                <span data-error>&#9888; Alleen hoofdletters en punten</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="prepositionAcquirer">Tussen-voegsel(s)</label>
+                                <input type="text" placeholder="" name="prepositionAcquirer" id="prepositionAcquirer" pattern="^[a-zA-Z]+$" title="Vul alleen letters in">
+                                <span data-error>&#9888; Alleen letters toegestaan</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="secondNameAcquirer">Achternaam</label>
+                                <input type="text" placeholder="" required name="secondNameAcquirer" id="secondNameAcquirer" pattern="^[a-zA-Z]+$" title="Vul alleen letters in">
+                                <span data-error>&#9888; Alleen letters toegestaan</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <p>Geboortedatum</p>
+                            <input type="date" name="birthAcquirer" id="birthAcquirer">
+                            <label for="birthAcquirer"></label>
+                        </div>
+                        <h3>Gegevens instelling</h3>
+                        <div class="form-group">
+                            <label for="rsinAcquirer">RSIN instelling</label>
+                            <input type="text" placeholder="" required name="rsinAcquirer" id="rsinAcquirer" minlength="9" maxlength="9" pattern="^[1-9][0-9]{8}$" title="Vul een juist BSN nummer in, startende met 1 of hoger">
+                            <span data-error>&#9888; Alleen getallen, te beginnen met 1 of hoger</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="nameInstitutionAcquirer">Naam instelling (bijvoorbeeld een notariskantoor)</label>
+                            <input type="text" placeholder="" required name="nameInstitutionAcquirer" id="nameInstitutionAcquirer" pattern="^[a-zA-Z]+$" title="Vul alleen letters in">
+                            <span data-error>&#9888; Alleen letters toegestaan</span>
+                        </div>
+                        <h3>Adres in Nederland</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="adressStreetNLAcquirer">Straat</label>
+                                <input type="text" placeholder="" name="adressStreetNLAcquirer" id="adressStreetNLAcquirer" pattern="^[a-zA-Z]+$" title="Vul alleen letters in">
+                                <span data-error>&#9888; Alleen letters toegestaan</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="adressNumberNLAcquirer">Huisnummer</label>
+                                <input type="text" placeholder="" name="adressNumberNLAcquirer" id="adressNumberNLAcquirer" pattern="^[1-9]+$" title="Vul een juist huisnnumer in, startende met 1 of hoger">
+                                <span data-error>&#9888; Alleen getallen toegestaan</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="adressAdditionNLAcquirer">Toevoeging</label>
+                                <input type="text" placeholder="" name="adressAdditionNLAcquirer" id="adressAdditionNLAcquirer" pattern="^[a-zA-Z]+$" title="Vul alleen letters in">
+                                <span data-error>&#9888; Alleen letters toegestaan</span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="zipAdressNLAcquirer">Postcode</label>
+                                <input type="text" placeholder="" name="zipAdressNLAcquirer" id="zipAdressNLAcquirer" maxlength="6" pattern="^\d{4}\s?[A-Z]{2}$" title="Vul juiste postcode in. Voorbeeld: 1234AB">
+                                <span data-error>&#9888; Alleen hoofdletters en getallen</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="cityNLAcquirer">Woonplaats</label>
+                                <input type="text" placeholder="" name="cityNLAcquirer" id="cityNLAcquirer" pattern="^[a-zA-Z]+$" title="Vul een juiste woonplaats in. Voorbeeld: Amsterdam">
+                                <span data-error>&#9888; Alleen letters toegestaan</span>
+                            </div>
+                        </div>
+                        <h3>Adres in het buitenland</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="adressStreetAbroadAcquirer">Straat</label>
+                                <input type="text" placeholder="" name="adressStreetAbroadAcquirer" id="adressStreetAbroadAcquirer" pattern="^[a-zA-Z]+$" title="Vul alleen letters in">
+                                <span data-error>&#9888; Alleen letters toegestaan</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="adressNumberAbroadAcquirer">Huisnummer</label>
+                                <input type="text" placeholder="" name="adressNumberNLAcquirer" id="adressNumberAbroadAcquirer" pattern="^[1-9]+$" title="Vul een juist huisnnumer in, startende met 1 of hoger">
+                                <span data-error>&#9888; Alleen getallen toegestaan</span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="zipAdressAbroadAcquirer">Postcode</label>
+                                <input type="text" placeholder="" name="zipAdressAbroadAcquirer" id="zipAdressAbroadAcquirer" maxlength="6" pattern="^\d{4}\s?[A-Z]{2}$" title="Vul juiste postcode in. Voorbeeld: 1234AB">
+                                <span data-error>&#9888; Alleen letters en getallen. Voorbeeld: 1234AB</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="cityAbroadAcquirer">Woonplaats</label>
+                                <input type="text" placeholder="" name="cityAbroadAcquirer" id="cityAbroadAcquirer" pattern="^[a-zA-Z]+$" title="Vul alleen letters in">
+                                <span data-error>&#9888; Alleen letters toegestaan</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="countryAcquirer">Land</label>
+                            <input type="text" placeholder="" name="countryAcquirer" id="countryAcquirer" pattern="^[a-zA-Z]+$" title="Vul alleen letters in">
+                            <span data-error>&#9888; Alleen letters toegestaan</span>
+                        </div>
+                        <h3>Relatie met overledene</h3>
+                        <p>Wat is de relatie van deze verkrijger met de overledene?</p>
+                        <div class="radioBtn-wrapper individual-radio">
+                            <input type="radio" name="question-13" id="question-13a-a" value="nee" required>
+                            <label for="question-13a-a">Echtgenoot of geregistreerd partner</label>
+                        </div>
+                        <div class="radioBtn-wrapper individual-radio">
+                            <input type="radio" name="question-13" id="question-13a-b" value="ja" data-show-hide="#question-13a">
+                            <label for="question-13a-b">Samenwoner zonder notariële akte</label>
+                        </div>
+                        <div class="hidden no-js page1-question10-hidden" id="question-13a">
+                            <p>Stonden de verkrijger en de overledene tot de overlijdens datum minstens 5 jaar op hetzelfde adres
+                                ingeschreven in de Basisregistratie Personen (BRP) of een vergelijkbare administratie buiten Nederland?</p>
+                            <div class="input-wrapper">
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-13a-sub" id="question-13a-sub-a" value="nee" checked>
+                                    <label for="question-13a-sub-a">Nee</label>
+                                </div>
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-13a-sub" id="question-13a-sub-b" value="ja">
+                                    <label for="question-13a-sub-b">Ja.</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="radioBtn-wrapper individual-radio">
+                            <input type="radio" name="question-13" id="question-13c-a" value="ja" data-show-hide="#question-13c">
+                            <label for="question-13c-a">Samenwoner met notariële akte</label>
+                        </div>
+                        <div class="hidden no-js page1-question13-hidden" id="question-13c">
+                            <p>Is het samenlevingscontract minstens 6 maanden voor het overlijden opgesteld?</p>
+                            <div class="input-wrapper">
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-13c-sub" id="question-13c-sub-a" value="nee" checked>
+                                    <label for="question-13c-sub-a">Nee</label>
+                                </div>
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-13c-sub" id="question-13c-sub-b" value="ja">
+                                    <label for="question-13c-sub-b">Ja.</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Datum huwelijkse of partnerschapsvoorwaarden</p>
+                                <input type="date" name="question-13c-sub-c" id="question-13c-sub-c">
+                                <label for="question-13c-sub-c"></label>
+                            </div>
+                        </div>
+                        <div class="radioBtn-wrapper individual-radio">
+                            <input type="radio" name="question-13" id="question-13d" value="nee">
+                            <label for="question-13d">Ouder</label>
+                        </div>
+                        <div class="radioBtn-wrapper individual-radio">
+                            <input type="radio" name="question-13" id="question-13e" value="nee">
+                            <label for="question-13e">Ex-partner (als er bij de echtscheiding afspraken zijn gemaakt over de erfenis)</label>
+                        </div>
+                        <div class="radioBtn-wrapper individual-radio">
+                            <input type="radio" name="question-13" id="question-13f" value="nee">
+                            <label for="question-13f">Kind of stiefkind</label>
+                        </div>
+                        <div class="radioBtn-wrapper individual-radio">
+                            <input type="radio" name="question-13" id="question-13g" value="nee">
+                            <label for="question-13g">Pleegkind</label>
+                        </div>
+                        <div class="radioBtn-wrapper individual-radio">
+                            <input type="radio" name="question-13" id="question-13h" value="nee">
+                            <label for="question-13h">Kleinkind</label>
+                        </div>
+                        <div class="radioBtn-wrapper individual-radio">
+                            <input type="radio" name="question-13" id="question-13i" value="nee">
+                            <label for="question-13i">Achterkleinkind</label>
+                        </div>
+                        <div class="radioBtn-wrapper individual-radio">
+                            <input type="radio" name="question-13" id="question-13j" value="nee">
+                            <label for="question-13j">Algemeen nut beogende instelling (ANBI)</label>
+                        </div>
+                        <div class="radioBtn-wrapper individual-radio">
+                            <input type="radio" name="question-13" id="question-13k" value="nee">
+                            <label for="question-13k">Sociaal belang behartigende instelling (SBBI)</label>
+                        </div>
+                        <div class="radioBtn-wrapper individual-radio">
+                            <input type="radio" name="question-13" id="question-13l" value="nee">
+                            <label for="question-13l">Anders</label>
+                        </div>
+                        <h3>Erfdelen, legaten en legitieme portie</h3>
+                        <p>Wat is het erfdeel van deze verkrijger? Geef het erfdeel op als breuk, bijvoorbeeld 1/4, of als percentage. Krijgt deze
+                            verkrijger alleen een legaat of doet deze verkrijger een beroep op zijn legitieme portie? Vul dan 0/1 in.</p>
+                        <div class="form-group fraction">
+                            <label for="fractionAcquirer">Breuk</label>
+                            <input type="text" placeholder="" required name="fractionAcquirer" id="fractionAcquirer" minlength="1" maxlength="5" pattern="^[1-9][0-9]{5}$" title="Vul alleen getallen in">
+                            <span data-error>&#9888; Alleen getallen toegestaan</span>                        
+                            <p>/</p>
+                            <input type="text" placeholder="" required name="fractionSecondAcquirer" id="fractionSecondAcquirer" minlength="1" maxlength="5" pattern="^[1-9][0-9]{5}$" title="Vul alleen getallen in">
+                            <span data-error>&#9888; Alleen getallen toegestaan</span>
+                        </div>
+                        <div class="form-group percentage">
+                            <label for="percentageAcquirer">Percentage</label>
+                            <input type="text" placeholder="" required name="percentageAcquirer" id="percentageAcquirer" minlength="1" maxlength="5" pattern="^[1-9][0-9]{3}$" title="Vul een juist percentage in">
+                            <span data-error>&#9888; Alleen getallen toegestaan</span>
+                            <p>,</p>
+                            <input type="text" placeholder="" required name="percentageSecondAcquirer" id="percentageSecondAcquirer" minlength="1" maxlength="5" pattern="^[1-9][0-9]{2}$" title="Vul een juist percentage in">
+                            <span data-error>&#9888; Alleen getallen toegestaan</span>
+                        </div>
+                        <p>Doet deze verkrijger een beroep op diens legitieme portie?</p>
+                        <div class="input-wrapper">
+                            <div class="radioBtn-wrapper">
+                                <input type="radio" name="question-14a" id="question-14a-a" value="nee" required>
+                                <label for="question-14a-a">Nee</label>
+                            </div>
+                            <div class="radioBtn-wrapper">
+                                <input type="radio" name="question-14a" id="question-14a-b" value="ja">
+                                <label for="question-14a-b">Ja.</label>
+                            </div>
+                        </div>
+                        <p>Is er sprake van vrucht-gebruik?</p>
+                        <div class="input-wrapper wrapper-column">
+                            <div class="radioBtn-wrapper">
+                                <input type="radio" name="question-14b" id="question-14b-a" value="nee" data-show-hide="#question-14b" required>
+                                <label for="question-14b-a">Nee</label>
+                            </div>
+                            <div class="radioBtn-wrapper">
+                                <input type="radio" name="question-14b" id="question-14b-b" value="ja" data-show-hide="#question-14b">
+                                <label for="question-14b-b">Ja.</label>
+                            </div>
+                            <div class="hidden no-js page1-question14-hidden" id="question-14b">
+                                <p>Vraagt de partner van de overledene of iemand andersdie het vruchtgebruik van de woning krijgt om uitstel van betaling?</p>
+                                <div class="input-wrapper">
+                                    <div class="radioBtn-wrapper">
+                                        <input type="radio" name="question-14c" id="question-14b-c" value="nee" checked>
+                                        <label for="question-14b-c">Nee</label>
+                                    </div>
+                                    <div class="radioBtn-wrapper">
+                                        <input type="radio" name="question-14c" id="question-14b-d" value="ja">
+                                        <label for="question-14b-d">Ja.</label>
+                                    </div>
+                                </div>
+                                <div class="form-group usufruct-group">
+                                    <label for="usufruct">Waarde van het vruchtgebruik</label>
+                                    <input type="text" placeholder="" name="usufruct" id="usufruct" pattern="^[a-zA-Z]+$" title="Alleen getallen">
+                                    <span data-error>&#9888; Alleen getallen toegestaan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Heeft deze verkrijger een partner die ook een erfdeel of een legaat van de overledene krijgt?</p>
+                        <div class="input-wrapper wrapper-column">
+                            <div class="radioBtn-wrapper">
+                                <input type="radio" name="question-14d" id="question-14c-a" value="nee" required>
+                                <label for="question-14c-a">Nee</label>
+                            </div>
+                            <div class="radioBtn-wrapper">
+                                <input type="radio" name="question-14d" id="question-14c-b" value="ja" data-show-hide="#question-14d">
+                                <label for="question-14c-b">Ja.</label>
+                            </div>
+                            <div class="hidden no-js page1-question15-hidden" id="question-14d">
+                                <div class="form-group">
+                                    <label for="namePartner">Naam van partner</label>
+                                    <input type="text" placeholder="" name="namePartner" id="namePartner" pattern="^[a-zA-Z]+$" title="Vul een juiste vestigingsplaats in">
+                                    <span data-error>&#9888; Alleen letters toegestaan</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bsnPartner">Burgerservicenummer partner</label>
+                                    <input type="text" placeholder="" required name="bsnPartner" id="bsnPartner" minlength="9" maxlength="9" pattern="^[1-9][0-9]{8}$" title="Vul een juist BSN nummer in, startende met 1 of hoger">
+                                    <span data-error>&#9888; Alleen getallen, te beginnen met 1 of hoger</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-holder" id="addDelAcquire">
+                            <button type="button" class="nextBtn" id="duplicateAcquireInfo">Nieuwe verkrijger</button>
+                            <button type="button" class="nextBtn" id="deleteAcquireInfo">Verkrijger weghalen</button>
+                        </div>
+                    </div>
+                    <h2>Gegevens verkrijgers (vervolg)</h2>
+                    <h3>Erfdelen, legaten en legitieme portie (vervolg)</h3>
+                    <p>Is er sprake van vrucht-gebruik?</p>
+                    <div class="input-wrapper wrapper-column">
+                        <div class="radioBtn-wrapper">
+                            <input type="radio" name="question-15a" id="question-15a-a" value="nee" data-show-hide="#question-15a" required>
+                            <label for="question-15a-a">Nee</label>
+                        </div>
+                        <div class="radioBtn-wrapper big-radioButton individual-radio">
+                            <input type="radio" name="question-15a" id="question-15a-b" value="ja" data-show-hide="#question-15a">
+                            <label for="question-15a-b">Ja. Specificeer hieronder alle legaten die deze verkrijger krijgt.</label>
+                        </div>
+                        <div class="hidden no-js page1-question16-hidden" id="question-15a">
+                            <p>Vraagt de partner van de overledene of iemand andersdie het vruchtgebruik van de woning krijgt om uitstel van betaling?</p>
+                            <div class="form-group usufruct-group">
+                                <label for="legaatDescription">Omschrijving van het legaat</label>
+                                <input type="text" placeholder="" name="legaatDescription" id="legaatDescription" pattern="^[a-zA-Z]+$" title="Alleen letters toegestaan">
+                                <span data-error>&#9888; Alleen letters toegestaan</span>
+                            </div>
+                            <div class="form-group usufruct-group">
+                                <label for="legaatValue">Waarde van het legaat</label>
+                                <input type="text" placeholder="" name="legaatValue" id="legaatValue" pattern="^[1-9][0-9]{0,9}$" title="Alleen getallen toegestaan">
+                                <span data-error>&#9888; Alleen getallen toegestaan</span>
+                            </div>
+                            <p>Komt dit legaat ten laste van een andere verkrijger?</p>
+                            <div class="input-wrapper">
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-15a-sub" id="question-15a-sub" value="nee" required data-show-hide="#question-15a-sub-main">
+                                    <label for="question-15a-sub">Nee</label>
+                                </div>
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-15a-sub" id="question-15b-sub" value="ja" data-show-hide="#question-15a-sub-main">
+                                    <label for="question-15b-sub">Ja.</label>
+                                </div>
+                            </div>
+                            <div class="hidden  no-js page1-question17-hidden" id="question-15a-sub-main">
+                                <div class="form-group usufruct-group">
+                                    <label for="bsnAcquirerSecond">Burgerservicenummer andere verkrijger</label>
+                                    <input type="text" placeholder="" required name="bsnAcquirerSecond" id="bsnAcquirerSecond" minlength="9" maxlength="9" pattern="^[1-9][0-9]{8}$" title="Vul een juist BSN nummer in, startende met 1 of hoger">
+                                    <span data-error>&#9888; Alleen getallen toegestaan</span>
+                                </div>
+                            </div>
+                            <p>Is dit legaat vrij van recht?</p>
+                            <div class="input-wrapper">
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-15b" id="question-15b-a" value="nee" required>
+                                    <label for="question-15b-a">Nee</label>
+                                </div>
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-15b" id="question-15b-b" value="ja">
+                                    <label for="question-15b-b">Ja.</label>
+                                </div>
+                            </div>
+                            <p>Is dit legaat aanvaard?</p>
+                            <div class="input-wrapper">
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-15c" id="question-15c-a" value="nee" required>
+                                    <label for="question-15c-a">Nee</label>
+                                </div>
+                                <div class="radioBtn-wrapper">
+                                    <input type="radio" name="question-15c" id="question-15c-b" value="ja">
+                                    <label for="question-15c-b">Ja.</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Inbreng van een schenking in de nalatenschap</h3>
+                    <div class="form-group">
+                        <label for="locationAcquirer">Vestigingsplaats</label>
+                        <input type="text" placeholder="" name="locationAcquirer" id="locationAcquirer" pattern="^[a-zA-Z]+$" title="Vul een juiste vestigingsplaats in">
+                        <span data-error>&#9888; Alleen letters toegestaan</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="legate">Waarde van het legaat</label>
+                        <input type="text" placeholder="" name="legate" id="legate" pattern="^[1-9][0-9]{0,9}$" title="Alleen getallen">
+                        <span data-error>&#9888; Alleen getallen toegestaan</span>
+                    </div>
+                    <h3>Ondertekening door de verkrijger. Als de executeur of de gemachtigde aangifte doet, hoeft de verkrijger niet zelf te ondertekenen.</h3>
+                    <div class="form-group">
+                        <label for="dateAcquire">Datum</label>
+                        <input type="text" name="dateAcquire" id="dateAcquire"  title="Vul een datum in">
+                    </div>
+                    <div class="form-group">
+                        <label for="signAcquire">Handtekening verkrijger</label>
+                        <input type="file" name="signAcquire" id="signAcquire">
+                    </div>
                     <section class="button-holder">
-                        <button type="submit" id="submitFormBtn" class="nextBtn">Versturen</a>
+                        <button type="submit" id="submitFormBtn" class="nextBtn">Formulier indienen</button>
                     </section>
                 </fieldset>
             </form>

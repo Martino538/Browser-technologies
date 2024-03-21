@@ -46,6 +46,7 @@
     --lightBlue: #8FCAE7;
     --blue: #01689b;
     --inputBlue: #d4e4eb;
+    --tailBlue: #f4fbff;
 }
 
 /* ---- ALGEMENE CODE ---- */
@@ -75,7 +76,7 @@ h1 {
     padding: 15px 0;
 }
 
-h1, h2, h3, ul{
+h1, ul{
     margin: 0;
 }
 
@@ -205,6 +206,7 @@ form fieldset label input:not(:last-of-type) {
     border: none;
     padding: 10px 20px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .input-wrapper {
@@ -220,6 +222,12 @@ form fieldset label input:not(:last-of-type) {
 
 #submitFormBtn {
     cursor: pointer;
+}
+
+.button-holder {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -299,7 +307,6 @@ body:has(#question-1b-a:checked) #link-1c-b {
     display: inline-block;
 }
 
-
 body:has(#question-1a-b:checked) .page1-question1-hidden {
     display: block;
 }
@@ -309,10 +316,14 @@ body:has(#question-1a-b:checked) .page1-question1-hidden {
 }
 
 /* Maak de desbetreffende section zichtbaar */
+/* no-js wordt standaard eraf gehaald door script, als js uit staat wordt het alsnog getoond */
 
 .no-js .page1-question1-hidden, .no-js .page1-question2-hidden, .no-js .page1-question2-hidden-sub, 
 .no-js .page1-question3-hidden, .no-js .page1-question4-hidden, .no-js .page1-question5-hidden,
-.no-js .page1-question6-hidden, .no-js .page1-question7-hidden, .no-js .page1-question8-hidden {
+.no-js .page1-question6-hidden, .no-js .page1-question7-hidden, .no-js .page1-question8-hidden,
+.no-js .page1-question9-hidden, .no-js .page1-question10-hidden, .no-js .page1-question13-hidden,
+.no-js .page1-question14-hidden, .no-js .page1-question15-hidden, .no-js .page1-question16-hidden,
+.no-js .page1-question17-hidden {
     display: block;
 }
 
@@ -385,6 +396,60 @@ body:has(#question-1a-b:checked) .page1-question1-hidden {
     gap: 15px;
 }
 
+/* ---- SECTIE 5 ---- */
+
+#question-5a-sub, #question-8a {
+    margin-top: 15px;
+}
+
+/* ---- SECTIE 6 ---- */
+
+.individual-radio {
+    width: max-content;
+}
+
+.individual-radio:not(:first-of-type) {
+    margin-top: 15px;
+}
+
+.fraction, .percentage {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.wrapper-column {
+    flex-wrap: wrap;
+}
+
+.usufruct-group {
+    margin-top: 15px;
+}
+
+#question-14d {
+    width: 100%;
+}
+
+.big-radioButton {
+    width: max-content;
+}
+
+.acquirer-wrapper {
+    background-color: var(--tailBlue);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    #section6 {
+        padding: 0;
+    }
+    .individual-radio {
+        width: 260px;
+    }
+}
+
 /* Switch tussen de sections */
 
 html:has(body form > fieldset:target) #section1  {
@@ -403,12 +468,6 @@ html:has(body form > fieldset:target) #section1  {
 
 #section3:target, #section4:target, #section5:target, #section6:target {
     display: block;
-}
-
-/* ---- SECTIE 5 ---- */
-
-#question-5a-sub, #question-8a {
-    margin-top: 15px;
 }
 
 /* ---- PROGRESS BAR ---- */
