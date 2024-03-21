@@ -1,4 +1,4 @@
-/** Initializing fonts **/
+/** ---- FONTS INSTELLEN ---- **/
 
 @font-face {
     font-family: 'RijksoverheidSansHeading';
@@ -26,18 +26,6 @@
 
 @font-face {
     font-family: 'RijksoverheidSerif';
-    src: url('/fonts/RijksoverheidSerif-Italic.eot');
-    src: url('/fonts/RijksoverheidSerif-Italic.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/RijksoverheidSerif-Italic.woff2') format('woff2'),
-        url('/fonts/RijksoverheidSerif-Italic.woff') format('woff'),
-        url('/fonts/RijksoverheidSerif-Italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'RijksoverheidSerif';
     src: url('RijksoverheidSerif-Regular.eot');
     src: url('RijksoverheidSerif-Regular.eot?#iefix') format('embedded-opentype'),
         url('RijksoverheidSerif-Regular.woff2') format('woff2'),
@@ -48,65 +36,127 @@
     font-display: swap;
 }
 
-/** / Initializing fonts **/
+
+
+/* ---- KLEURENSCHEMA ---- */
+
+:root {
+    --white: #ffffff;
+    --grey: #ededed;
+    --lightBlue: #8FCAE7;
+    --blue: #01689b;
+    --inputBlue: #d4e4eb;
+}
+
+/* ---- ALGEMENE CODE ---- */
 
 body {
+    height: 100vh;
     margin: 0;
     font-family: sans-serif;
+    background-color: var(--grey);
 }
 
 body figure {
     margin-top: 0;
     display: flex;
     justify-content: center;
+    margin: 0;
+    background-color: var(--white);
+    width: 100%;
+    height: max-content;
 }
 
-#link-1b-a {
-    display: none;
+main {
+    height: 100%;
 }
 
-body:has(#question-1b-a:checked) #link-1b-a {
-    display: inline-block;  
+h1 {
+    padding: 15px 0;
 }
 
-#link-1c-b {
-    display: none;
-}
-
-body:has(#question-1c-b:checked) #link-1c-b {
-    display: inline-block;  
-}
-
-
-
-form section ol {
-    padding: 0 150px;
+h1, h2, h3, ul{
     margin: 0;
 }
 
-
-form section ol:first-of-type li:first-of-type legend {
-    font-style: italic;
-    font-size: 13px;
-    margin-bottom: 5px;
+.content-wrapper {
+    height: 100%;
+    padding: 0 350px;
 }
 
-form > section > h2 {
-    background-color: #164273;
-    color: white;
-    padding: 10px 130px;
-    font-size: 18px;
+@media only screen and (max-width: 600px) {
+    .content-wrapper {
+        padding: 0 20px;
+    }
 }
 
-form fieldset {
-    margin: 20px;
-    border: none;
-    padding: 0;
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    .content-wrapper {
+        padding: 0 100px;
+    }
 }
 
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    .content-wrapper {
+        padding: 0 100px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .content-wrapper {
+        padding: 0 350px;
+    }
+}
+
+/* ---- TITEL ---- */
+
+#content-title {
+    background-color: var(--lightBlue);
+    padding: 0 350px;
+}
+
+@media only screen and (max-width: 1200px) {
+    #content-title {
+        padding: 0 20px;
+    }
+}
+
+/* ---- ALGEMENE FORM STYLING ---- */
+
+form {
+    background-color: var(--white);
+    margin: 30px 0;
+    padding: 30px;
+}
 
 form fieldset label, form fieldset input {
     width: auto;
+}
+
+form fieldset {
+    border: none;
+}
+
+form fieldset > fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form fieldset ul {
+    display: flex;
+}
+
+form fieldset ul li:not(:first-of-type) {
+    margin-left: 10px;
+}
+
+form fieldset ul li:last-of-type {
+    display: flex;
+}
+
+form fieldset ul li p, #question-1b-label {
+    max-width: 400px;
 }
 
 .form-row {
@@ -119,55 +169,266 @@ form fieldset label, form fieldset input {
     flex-direction: column;
 }
 .form-group label {
-    font-weight: bold;
     margin-bottom: 5px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
-.form-group input {
+input[type="text"], input[type="number"],input[type="tel"], input[type="email"], form input[type="date"] {
     padding: 10px 5px 10px 10px;
     width: max-content;
-    border-radius: 3px;
-    border: 2px solid #ced4da;
-    background-color: #f2f2f2;
+    border: 2px solid var(--lightBlue);
+    background-color: var(--inputBlue);
 }
 
 .form-group:not(:last-of-type) {
     margin-bottom: 10px;
 }
 
-input:user-valid {
-    border: 2px solid green;
-    background-color: rgb(239, 244, 239);
-}
-
-input:user-invalid {
-    border: 2px solid red;
-    background-color: rgb(241, 233, 233);
-}
-
-
-
-form section > section {
-    padding: 0 150px;
+form fieldset > section {
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
 }
 
-form section > section button:first-of-type {
-    border: none;
-    color: #164273;
-    text-decoration: underline;
-    background-color: transparent;
+form fieldset legend {
+    padding: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-form section > section button:last-of-type {
-    color: white;
-    background-color: #164273;
+form fieldset label input:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
+.nextBtn {
+    color: var(--white);
+    background-color: var(--blue);
     border: none;
     padding: 10px 20px;
-    border-radius: 3px;
+    text-decoration: none;
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 15px;
+}
+
+.radioBtn-wrapper {
+    border: 1px solid var(--lightBlue);
+    padding: 10px;
+    width: 60px;
+}
+
+#submitFormBtn {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    input[type="text"], input[type="number"],input[type="tel"], input[type="email"], form input[type="date"] {
+        width: 94%;
+    }
+
+    .input-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .button-holder {
+        margin-top: 15px;
+    }
+}
+
+/* ---- SECTIE 1 - INTRO ---- */
+
+.section-intro > h2 {
+    text-align: center;
+}
+
+.section-intro > ul {
+    margin: 1em 0;
+    justify-content: center;
+}
+
+#section1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.next-sectionBtn {
+    background-color: var(--blue);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    width: max-content;
+}
+
+/* ---- SECTIE 2 ---- */
+
+#section2 > legend {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#section2 fieldset > legend {
+    font-weight: bold;
+}
+
+
+#question-1b-file, #question-1b-label {
+    display: none;
+}
+
+body:has(#question-1b-b:checked) #question-1b-label,  body:has(#question-1b-b:checked) #question-1b-file{
+    display: inline-block;
+}
+
+#link-1c-b {
+    display: none;
+}
+
+.adressFieldset {
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+body:has(#question-1b-a:checked) #link-1c-b {
+    display: inline-block;
+}
+
+
+body:has(#question-1a-b:checked) .page1-question1-hidden {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Maak de desbetreffende section zichtbaar */
+
+.no-js .page1-question1-hidden, .no-js .page1-question2-hidden, .no-js .page1-question2-hidden-sub, 
+.no-js .page1-question3-hidden, .no-js .page1-question4-hidden, .no-js .page1-question5-hidden,
+.no-js .page1-question6-hidden, .no-js .page1-question7-hidden, .no-js .page1-question8-hidden {
+    display: block;
+}
+
+/* ---- SECTIE 3 ---- */
+
+.radioInputField-wrapper  {
+    display: flex;
+}
+
+.radioInputField {
+    display: flex;
+    align-items: center;
+}
+
+.radioInputField input {
+    margin-left: 10px;
+}
+
+#no-exec {
+    width: 160px;
+    margin-top: 15px;
+}
+
+.largeCheckbox {
+    width: 360px;
+}
+
+.largeCheckbox:nth-of-type(4) {
+    margin-top: 15px;
+}
+
+#section4 ul {
+    flex-direction: column;
+}
+
+#section4 li:not(:first-of-type) {
+    margin: 15px 0 0 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .largeCheckbox {
+        width: 270px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .radioInputField {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .radioInputField input {
+        margin: 10px 0 0 0;
+    }
+}
+
+/* ---- SECTIE 4 ---- */
+
+#section4-intro-list {
+    flex-direction: column;
+    max-width: 850px;
+}
+
+#section4-intro-list li {
+    margin: 10px 0 0 0;
+}
+
+#question-4a {
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Switch tussen de sections */
+
+html:has(body form > fieldset:target) #section1  {
+    display: none;
+}
+
+#section2:target {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#section2, #section3, #section4, #section5, #section6 {
+    display: none;
+}
+
+#section3:target, #section4:target, #section5:target, #section6:target {
+    display: block;
+}
+
+/* ---- SECTIE 5 ---- */
+
+#question-5a-sub, #question-8a {
+    margin-top: 15px;
+}
+
+/* ---- PROGRESS BAR ---- */
+
+#progress-bar {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#progress-bar li {
+    border: 1px solid black;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    padding: 5px 10px;
+}
+
+#progress-bar li a{
+    text-decoration: none;
+    color: black;
 }
 
 ul {
@@ -178,18 +439,66 @@ ul li {
     list-style-type: none;
 }
 
+/* Geef de styling mee aan de progress bar als er wijzigingen worden gemaakt in formulier velden */
 
-form fieldset legend {
-    padding: 0;
-    margin-bottom: 10px;
+html:has(#section2 :user-valid) #progress-bar li:first-of-type, html:has(#section3 :user-valid) #progress-bar li:nth-of-type(2), 
+html:has(#section4 :user-valid) #progress-bar li:nth-of-type(3), html:has(#section5 :user-valid) #progress-bar li:nth-of-type(4) {
+    background-color: #00ae00;
 }
 
-form fieldset label input:not(:last-of-type) {
-    margin-bottom: 10px;
+html:has(#section2 :user-valid) #progress-bar li:first-of-type a, html:has(#section3 :user-valid) #progress-bar li:nth-of-type(2) a, 
+html:has(#section4 :user-valid) #progress-bar li:nth-of-type(3) a, html:has(#section5 :user-valid) #progress-bar li:nth-of-type(4) a {
+    color: var(--white);
 }
 
+html:has(#section2 :user-invalid) #progress-bar li:first-of-type, html:has(#section3 :user-invalid) #progress-bar li:nth-of-type(2), 
+html:has(#section4 :user-invalid) #progress-bar li:nth-of-type(3), html:has(#section5 :user-invalid) #progress-bar li:nth-of-type(4){
+    background-color: red;
+}
 
+html:has(#section2 :user-invalid) #progress-bar li:first-of-type a, html:has(#section3 :user-invalid) #progress-bar li:nth-of-type(2) a, 
+html:has(#section4 :user-invalid) #progress-bar li:nth-of-type(3) a, html:has(#section5 :user-invalid) #progress-bar li:nth-of-type(4) a {
+    color: var(--white);
+}
 
-body > ol > li:not(:first-of-type) {
+/* ---- INPUT ERROR HANDLING ---- */
+
+input:user-valid {
+    border: 2px solid green;
+    background-color: rgb(239, 244, 239);
+}
+
+/* Maak als de input leeg is de styling weer default */
+input:user-invalid:not(:placeholder-shown) {
+    border: 2px solid red;
+    background-color: rgb(241, 233, 233);
+}
+
+/* Geef de error bij het input veld weer */
+input:user-invalid:not(:placeholder-shown) + span[data-error]{
+    color: red;
+    display: block;
+}
+
+span[data-error]{
     display: none;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* ---- TOELICHTING ---- */
+
+summary {
+    list-style: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #164273;
+    color: #164273;
+    display: inline-block;
+}
+
+details p {
+    background-color: lightblue;
+    padding: 10px;
+    font-size: 16px;
 }
