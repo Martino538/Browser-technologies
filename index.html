@@ -66,7 +66,12 @@
                         <div class="form-group">
                             <details>
                                 <summary>?</summary>
-                                <p>Dit is de toelichting</p>
+                                <p>Vul deze vraag in als de overledene op de datum van overlijden getrouwd was of een geregistreerd 
+                                    partner had. U hoeft vraag 1b niet in te vullen als:</p>
+                                    <ul>
+                                        <li>– de overledene een notarieel samenlevingscontract had met diens partner</li>
+                                        <li>– de overledene samen met een partner of huisgenoot op hetzelfde adres stond ingeschreven in de Basisregistratie Personen (BRP) van de gemeente</li>
+                                    </ul>
                             </details>
                         </div>
                     </div>
@@ -212,17 +217,34 @@
                 </fieldset>
                 <fieldset id="section3">
                     <h2>Gegevens gemachtigde</h2>
-                    <h3>Vul 1 van de 3 in: het burgerservicenummer of RSIN van de gemachtigde, het beconnummer van de adviseur of 
-                        het protocolnummer van de notaris.</h3>
+                    <p>Vul 1 van de 3 in: het burgerservicenummer of RSIN van de gemachtigde, het beconnummer van de adviseur of 
+                        het protocolnummer van de notaris.</p>
                         <div class="form-group">
                             <label for="authBSN">Burgerservicenummer/RSIN gemachtigde</label>
-                            <input type="text" placeholder="" required name="authBSN" id="authBSN" minlength="9" maxlength="9" pattern="^[1-9][0-9]{8}$" title="Vul een juist BSN nummer in, startende met 1 of hoger">
-                            <span data-error>&#9888; Alleen getallen, te beginnen met 1 of hoger</span>
+                            <div class="input-summary">
+                                <input type="text" placeholder="" required name="authBSN" id="authBSN" minlength="9" maxlength="9" pattern="^[1-9][0-9]{8}$" title="Vul een juist BSN nummer in, startende met 1 of hoger">
+                                <span data-error>&#9888; Alleen getallen, te beginnen met 1 of hoger</span>
+                                <details>
+                                    <summary>?</summary>
+                                    <p>Het bsn staat op 1 van de volgende documenten:</p>
+                                        <ul>
+                                            <li>– Nederlands identiteitsbewijs, zoals een paspoort, identiteitskaart of rijbewijs</li>
+                                            <li>– Een aanslag inkomstenbelasting of een aangiftebrief</li>
+                                            <li>– Nederlandse loonstrook, jaaropgaaf, zorgpas of zorgpolis</li>
+                                        </ul>
+                                </details>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="authBecon">Beconnummer adviseur</label>
-                            <input type="text" placeholder="" required name="authBecon" id="authBecon" minlength="9" maxlength="9" pattern="^[1-9][0-9]{8}$" title="Vul een juist Beconnummer in, startende met 1 of hoger">
-                            <span data-error>&#9888; Alleen getallen, te beginnen met 1 of hoger</span>
+                            <div class="input-summary">
+                                <input type="text" placeholder="" required name="authBecon" id="authBecon" minlength="9" maxlength="9" pattern="^[1-9][0-9]{8}$" title="Vul een juist Beconnummer in, startende met 1 of hoger">
+                                <span data-error>&#9888; Alleen getallen, te beginnen met 1 of hoger</span>
+                                <details>
+                                    <summary>?</summary>
+                                    <p>Elke belastingconsulent heeft een beconnummer. U vindt het beconnummer bijvoorbeeld op de factuur.</p>
+                                </details>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="authProtocol">Protocolnummer notaris</label>

@@ -85,9 +85,18 @@ h1, ul{
     padding: 0 350px;
 }
 
+.input-summary {
+    display: flex;
+    gap: 15px;
+}
+
 @media only screen and (max-width: 600px) {
     .content-wrapper {
         padding: 0 20px;
+    }
+
+    .input-summary {
+        flex-direction: column;
     }
 }
 
@@ -148,10 +157,6 @@ form fieldset ul {
     display: flex;
 }
 
-form fieldset ul li:not(:first-of-type) {
-    margin-left: 10px;
-}
-
 form fieldset ul li:last-of-type {
     display: flex;
 }
@@ -177,6 +182,7 @@ form fieldset ul li p, #question-1b-label {
 input[type="text"], input[type="number"],input[type="tel"], input[type="email"], form input[type="date"] {
     padding: 10px 5px 10px 10px;
     width: max-content;
+    height: max-content;
     border: 2px solid var(--lightBlue);
     background-color: var(--inputBlue);
 }
@@ -556,8 +562,21 @@ summary {
     display: inline-block;
 }
 
-details p {
-    background-color: lightblue;
-    padding: 10px;
+details {
+    background-color: var(--tailBlue);
     font-size: 16px;
+}
+
+details p {
+    padding: 20px;
+    margin: 0;
+}
+
+details ul {
+    padding: 0 20px 20px 20px;
+    flex-direction: column;
+}
+
+details ul li:not(:first-of-type) {
+    margin-top: 10px;
 }
