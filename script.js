@@ -394,9 +394,9 @@ function duplicateSection(){
 }
 
 function removeSection(){
-    const sections = document.querySelectorAll(".acquirer-wrapper section");
-    if(sections.length > 0){
-        sections[sections.length - 1].remove();
+    const acquireSection = document.querySelectorAll(".acquirer-wrapper section");
+    if(acquireSection.length > 0){
+        acquireSection[acquireSection.length - 1].remove();
         counter--;
     }
 }
