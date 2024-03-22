@@ -717,7 +717,7 @@
                         </div>
                         <div class="form-group">
                             <label for="dateExec">Datum</label>
-                            <input type="text" name="dateExec" id="dateExec"  title="Vul een datum in">
+                            <input type="date" name="dateExec" id="dateExec"  title="Vul een datum in">
                         </div>
                         <div class="form-group">
                             <label for="signExec">Uw handtekening</label>
@@ -918,18 +918,18 @@
                             verkrijger alleen een legaat of doet deze verkrijger een beroep op zijn legitieme portie? Vul dan 0/1 in.</p>
                         <div class="form-group fraction">
                             <label for="fractionAcquirer">Breuk</label>
-                            <input type="text" placeholder="" required name="fractionAcquirer" id="fractionAcquirer" minlength="1" maxlength="5" pattern="^[1-9][0-9]{5}$" title="Vul alleen getallen in">
+                            <input type="text" placeholder="" required name="fractionAcquirer" id="fractionAcquirer" minlength="1" maxlength="5" pattern="^[1-9][0-9]*$" title="Vul alleen getallen in">
                             <span data-error>&#9888; Alleen getallen toegestaan</span>                        
                             <p>/</p>
-                            <input type="text" placeholder="" required name="fractionSecondAcquirer" id="fractionSecondAcquirer" minlength="1" maxlength="5" pattern="^[1-9][0-9]{5}$" title="Vul alleen getallen in">
+                            <input type="text" placeholder="" required name="fractionSecondAcquirer" id="fractionSecondAcquirer" minlength="1" maxlength="5" pattern="^[1-9][0-9]*$" title="Vul alleen getallen in">
                             <span data-error>&#9888; Alleen getallen toegestaan</span>
                         </div>
                         <div class="form-group percentage">
                             <label for="percentageAcquirer">Percentage</label>
-                            <input type="text" placeholder="" required name="percentageAcquirer" id="percentageAcquirer" minlength="1" maxlength="5" pattern="^[1-9][0-9]{3}$" title="Vul een juist percentage in">
+                            <input type="text" placeholder="" required name="percentageAcquirer" id="percentageAcquirer" minlength="1" maxlength="5" pattern="^[1-9][0-9]*$" title="Vul een juist percentage in">
                             <span data-error>&#9888; Alleen getallen toegestaan</span>
                             <p>,</p>
-                            <input type="text" placeholder="" required name="percentageSecondAcquirer" id="percentageSecondAcquirer" minlength="1" maxlength="5" pattern="^[1-9][0-9]{2}$" title="Vul een juist percentage in">
+                            <input type="text" placeholder="" required name="percentageSecondAcquirer" id="percentageSecondAcquirer" minlength="1" maxlength="5" pattern="^[1-9][0-9]*$" title="Vul een juist percentage in">
                             <span data-error>&#9888; Alleen getallen toegestaan</span>
                         </div>
                         <p>Doet deze verkrijger een beroep op diens legitieme portie?</p>
@@ -954,10 +954,10 @@
                                 <label for="question-14b-b">Ja.</label>
                             </div>
                             <div class="hidden no-js page1-question14-hidden" id="question-14b">
-                                <p>Vraagt de partner van de overledene of iemand andersdie het vruchtgebruik van de woning krijgt om uitstel van betaling?</p>
+                                <p>Vraagt de partner van de overledene of iemand anders die het vruchtgebruik van de woning krijgt om uitstel van betaling?</p>
                                 <div class="input-wrapper">
                                     <div class="radioBtn-wrapper">
-                                        <input type="radio" name="question-14c" id="question-14b-c" value="nee" checked>
+                                        <input type="radio" name="question-14c" id="question-14b-c" value="nee">
                                         <label for="question-14b-c">Nee</label>
                                     </div>
                                     <div class="radioBtn-wrapper">
@@ -967,7 +967,7 @@
                                 </div>
                                 <div class="form-group usufruct-group">
                                     <label for="usufruct">Waarde van het vruchtgebruik</label>
-                                    <input type="text" placeholder="" name="usufruct" id="usufruct" pattern="^[a-zA-Z]+$" title="Alleen getallen">
+                                    <input type="text" placeholder="" name="usufruct" id="usufruct" pattern="^[1-9][0-9]$" title="Alleen getallen">
                                     <span data-error>&#9888; Alleen getallen toegestaan</span>
                                 </div>
                             </div>
@@ -1080,7 +1080,7 @@
                     <h3>Ondertekening door de verkrijger. Als de executeur of de gemachtigde aangifte doet, hoeft de verkrijger niet zelf te ondertekenen.</h3>
                     <div class="form-group">
                         <label for="dateAcquire">Datum</label>
-                        <input type="text" name="dateAcquire" id="dateAcquire"  title="Vul een datum in">
+                        <input type="date" name="dateAcquire" id="dateAcquire"  title="Vul een datum in">
                     </div>
                     <div class="form-group">
                         <label for="signAcquire">Handtekening verkrijger</label>
