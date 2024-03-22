@@ -341,8 +341,8 @@
                             <legend>Overige gegevens</legend>
                             <div class="form-group">
                                 <label for="phoneNumber">Telefoonnummer</label>
-                                <input type="tel" required name="phoneNumber" id="phoneNumber" title="Vul alleen cijfers in">
-                                <span data-error>&#9888; Alleen letters toegestaan</span>
+                                <input type="tel" required name="phoneNumber" id="phoneNumber" pattern="^[1-9][0-9]*$" title="Vul alleen cijfers in">
+                                <span data-error>&#9888; Alleen getallen toegestaan</span>
                             </div>
                             <div class="form-group">
                                 <label for="mailAdres">E-mailadres</label>
